@@ -1,0 +1,21 @@
+<!-- create-article.component.html -->
+<h1> Creeaza un articol </h1>
+<form [formGroup]="formValue">
+    <label for="title">Titlu: </label> <br>
+    <input type="text" id="title" [(ngModel)]="articleObj.title" formControlName="title" required> <br>
+    <br>
+
+    <label for="author">Autor: </label> <br>
+    <input type="text" id="author" [(ngModel)]="articleObj.author" formControlName="author" required> <br>
+    <br>
+    <label for="description">Conținut: </label> <br>
+    <textarea id="content" [(ngModel)]="articleObj.description" formControlName="description" maxlength="5000"
+        required></textarea>
+
+    <br> <br>
+    <label for="image">URL imagine: </label> <br>
+    <input class="form-control" type="text" formControlName="image" required>
+
+    <br> <br>
+    <button type="button" class="btn btn-primary" (click)="createBl()">Publica articolul</button>
+</form>

@@ -1,0 +1,58 @@
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40rem;
+  width: 30rem;
+  margin: 5px;
+}
+
+.card img {
+  width: 100%;
+  height: 60%; /* Ajustează înălțimea imaginii */
+  object-fit: cover;
+}
+
+.card .card-body {
+  padding: 10px;
+  height: 100%; /* Asigură că card-body ocupă întreaga înălțime a cardului */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 3rem;
+  line-height: 1.2;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: cursive;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: purple;
+}
+
+.description-container {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
