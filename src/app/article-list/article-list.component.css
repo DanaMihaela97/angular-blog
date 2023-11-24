@@ -1,58 +1,44 @@
-.d-flex {
+.detail{
   display: flex;
-  flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%; 
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+    text-indent: 20px;
+    margin-left:10%;
 }
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 40rem;
-  width: 30rem;
-  margin: 5px;
+.title{
+  margin-top:50px;
+  color:purple;
+  margin-left:5%;
+  margin-top:8%;
+  text-transform: uppercase;
 }
-
-.card img {
-  width: 100%;
-  height: 60%; /* Ajustează înălțimea imaginii */
-  object-fit: cover;
+.article-image {
+  max-width: 50%;
+  max-height: 100%;
+  margin-left:5%;
 }
+.description{
+    margin-left:2%;
+    text-align: justify;
+    text-indent: 20px;
+    width: 96%;
+    font-size: 1.4rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-.card .card-body {
-  padding: 10px;
-  height: 100%; /* Asigură că card-body ocupă întreaga înălțime a cardului */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
-
-.title {
-  margin-top: 20px;
-  font-size: 3rem;
-  line-height: 1.2;
-  overflow: hidden;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-family: cursive;
+.detail{
+  width: 90%;
 }
-
-.description {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: purple;
+.container{
+  margin-bottom:5%;
+  border:1px dashed rgb(124, 67, 67);
+  
 }
-
-.description-container {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-.button-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+.button-container{
+  margin-bottom:3%;
 }

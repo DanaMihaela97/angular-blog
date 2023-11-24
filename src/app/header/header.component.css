@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; 
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(228, 179, 179); 
+    z-index: 10; 
+  }
+
+  header img {
+    margin-left: 20px;
+    width: 10%;
+  }
+
+  header span {
+    color: rgb(0, 0, 0);
+    font-size: 2.5rem;
+    font-family:cursive;
+    margin-left: 20px;
+    margin-top:25px;
+  }

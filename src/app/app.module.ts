@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule } from '@angular/common/http';
 import { EditComponent } from './edit/edit.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HomeComponent } from './home/home.component';
     CreateArticleComponent,
     ArticleListComponent,
     EditComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

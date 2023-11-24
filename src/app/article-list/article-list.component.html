@@ -1,18 +1,31 @@
-<div class="d-flex">
+<!-- <div class="d-flex">
   <div *ngFor="let article of articles" class="card">
-    <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <img src={{article.image}} >
       <h3 class="title">{{ article.title }}</h3>
-      <div class="description-container" style="line-height: 1.2; max-height: 2.4em;">
+      <div class="content-container">
         <p class="description">{{ article.description }}</p>
+        <img src="{{ article.image }}" class="article-image">
       </div>
-      <p class="author">Autorul articolului: <span id="auth">{{ article.author }}</span></p>
-      <p>Articol creat la data de: {{article.date}}</p>
+      <p class="author">{{ article.author }}</p>
       <div class="button-container">
-        <button class="btn btn-link">Citeste mai mult</button>
+        <button class="btn btn-link" routerLink="/details">Citeste mai mult</button>
         <button class="btn btn-danger" (click)="deleteArticle(article.id)">Ștergere articol</button>
       </div>
     </div>
   </div>
-</div>
+</div> -->
+<body>
+  <div *ngFor="let article of articles">
+    <div class="container">
+        <h3 class="title">{{article.title}}</h3>
+        <div class="detail" >
+          <p class="description">{{article.description}}</p>
+          <img src="{{article.image}}" class="article-image">
+        </div>
+        <div class="button-container">
+          <button class="btn btn-primary" style="margin-right:1%" routerLink="/details">Citeste mai mult</button>
+          <button class="btn btn-danger" (click)="deleteArticle(article.id)">Ștergere articol</button>
+        </div>
+    </div>
+  </div>
+</body>
