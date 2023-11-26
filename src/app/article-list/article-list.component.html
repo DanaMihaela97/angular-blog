@@ -17,6 +17,7 @@
 <body>
   <div *ngFor="let article of articles">
     <div class="container">
+      <hr>
         <h3 class="title">{{article.title}}</h3>
         <div class="detail" >
           <p class="description">{{article.description}}</p>
@@ -25,6 +26,7 @@
         <div class="button-container">
           <button class="btn btn-primary" style="margin-right:1%" routerLink="/details">Citeste mai mult</button>
           <button class="btn btn-danger" (click)="deleteArticle(article.id)">Ștergere articol</button>
+          <hr>
         </div>
     </div>
   </div>

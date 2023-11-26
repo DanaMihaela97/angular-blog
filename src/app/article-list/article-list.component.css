@@ -2,32 +2,31 @@
   display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 60%; 
-    margin-top: 20px;
     font-size: 0.9rem;
     color: rgb(0, 0, 0);
-    text-align: justify;
+    /* text-align: justify;
     text-indent: 20px;
-    margin-left:10%;
+    margin-left:10%; */
 }
 .title{
-  margin-top:50px;
   color:purple;
   margin-left:5%;
-  margin-top:8%;
+  margin-top:2%;
   text-transform: uppercase;
+  text-align: center;
 }
 .article-image {
   max-width: 50%;
   max-height: 100%;
   margin-left:5%;
+  
+  margin-right:-10%;
 }
 .description{
-    margin-left:2%;
+  margin-left:4%;
     text-align: justify;
     text-indent: 20px;
-    width: 96%;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
@@ -36,7 +35,8 @@
 }
 .container{
   margin-bottom:5%;
-  border:1px dashed rgb(124, 67, 67);
+  width: 50%;
+  height: 30%;
   
 }
 .button-container{
