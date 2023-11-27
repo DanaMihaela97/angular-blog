@@ -1,4 +1,4 @@
-.detail {
+/* .detail {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,15 +11,7 @@
     margin-left:10%;
     margin-bottom: 4%;
   }
-  .detail1{
-    width: 60%; 
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: rgb(0, 0, 0);
-    text-align: justify;
-    text-indent: 20px;
-    margin-left:10%;
-  }
+
 .h2{
     margin-top:50px;
     color:purple;
@@ -32,27 +24,64 @@
     text-align: justify;
     text-indent: 20px;
     width: 96%;
+    
 }
 p{
     font-size:1.2rem;
 }
 
-img {
+.article-image {
     max-width: 100%;
     max-height: 100%;
     margin-left:5%;
-  }
-  h4 {
-    margin-bottom: 10px; 
-    margin-left: 5%;
-    color:red;
-    margin-top:3%;
-  }
-  .table{
-    font-size:1rem;
   }
   .butonel{
     width: 4%;
     font-size: 1rem;
     position: fixed;
   }
+  */
+
+  .container {
+    margin-bottom: 3%;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .article-image {
+    max-width: 20%;
+  }
+  
+  .text {
+    margin-left: 5%; 
+    width: 75%; 
+  
+  }
+  
+  .title {
+    color: purple;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    margin-left: 4%;
+    text-align: justify;
+    text-indent: 20px;
+    font-size: 1.1rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .detail p {
+    margin-top: 0;
+    margin-bottom: 1em }
+
+  
+  
+ 
+  
+  

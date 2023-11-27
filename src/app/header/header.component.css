@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     display: flex;
@@ -17,15 +17,26 @@ body {
     z-index: 10; 
   }
 
-  header img {
-    margin-left: 20px;
-    width: 10%;
-  }
 
-  header span {
+  /* header span {
     color: rgb(0, 0, 0);
     font-size: 2.5rem;
     font-family:cursive;
     margin-left: 20px;
     margin-top:25px;
+  } */ 
+  
+
+  header span{
+    font-size:1.8vw;
+    color:brown;
+    font-family: cursive;
+    margin-top:20px;
+    margin-left:20px;
   }
+
+  header img {
+    margin-left: 20px;
+    width: 10%;
+  } 
+  

@@ -1,33 +1,17 @@
-<!-- <div class="d-flex">
-  <div *ngFor="let article of articles" class="card">
-    <div class="card-body">
-      <h3 class="title">{{ article.title }}</h3>
-      <div class="content-container">
-        <p class="description">{{ article.description }}</p>
-        <img src="{{ article.image }}" class="article-image">
-      </div>
-      <p class="author">{{ article.author }}</p>
-      <div class="button-container">
-        <button class="btn btn-link" routerLink="/details">Citeste mai mult</button>
-        <button class="btn btn-danger" (click)="deleteArticle(article.id)">Ștergere articol</button>
-      </div>
-    </div>
-  </div>
-</div> -->
 <body>
-  <div *ngFor="let article of articles">
+  <div *ngFor="let article of articles" [ngClass]="getPositionClass(article.id.toString())">
     <div class="container">
       <hr>
-        <h3 class="title">{{article.title}}</h3>
-        <div class="detail" >
-          <p class="description">{{article.description}}</p>
-          <img src="{{article.image}}" class="article-image">
-        </div>
-        <div class="button-container">
-          <button class="btn btn-primary" style="margin-right:1%" routerLink="/details">Citeste mai mult</button>
-          <button class="btn btn-danger" (click)="deleteArticle(article.id)">Ștergere articol</button>
-          <hr>
-        </div>
+      <h3 class="title">{{article.title}}</h3>
+      <div class="detail">
+        <p class="description">{{article.description}}</p>
+        <img src="{{article.home_image}}" class="article-image">
+      </div>
+      <div class="button-container">
+        <button class="btn btn-primary" style="margin-right:1%"[routerLink]="['/details', article.id.toString()]">Citeste mai mult</button>
+        <button class="btn btn-danger" (click)="deleteArticle(article.id)">Ștergere articol</button>
+        <hr>
+      </div>
     </div>
   </div>
 </body>

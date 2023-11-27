@@ -30,10 +30,13 @@ export class ApiService {
   return this.http.delete<any>("http://localhost:8080/api/v1/blog/blogs/delete/" + id);
 }
 
-  // data=body
-  updateArticle(data :any, id: any){
+  updateArticle(data :any, article_id: any){
     console.log(data)
-    return this.http.put<any>("http://localhost:8080/api/v1/blog/blogs" + id, data)
+    return this.http.put<any>("http://localhost:8080/api/v1/blog/blogs/edit/" + article_id, data)
   }
+  getArticleDetails(article_id: any) {
+    return this.http.get<Article>("http://localhost:8080/api/v1/blog/blogs/" + article_id);
+  }
+  
 
 }

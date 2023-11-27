@@ -4,9 +4,7 @@
     justify-content: space-between;
     font-size: 0.9rem;
     color: rgb(0, 0, 0);
-    /* text-align: justify;
-    text-indent: 20px;
-    margin-left:10%; */
+ 
 }
 .title{
   color:purple;
@@ -19,7 +17,6 @@
   max-width: 50%;
   max-height: 100%;
   margin-left:5%;
-  
   margin-right:-10%;
 }
 .description{
@@ -34,11 +31,22 @@
   width: 90%;
 }
 .container{
-  margin-bottom:5%;
+  margin-bottom:3%;
   width: 50%;
   height: 30%;
+  background-color: rgb(255, 255, 255);
   
 }
 .button-container{
-  margin-bottom:3%;
+  margin-bottom:1%;
 }
+
+
+.even-id {
+  float: right;
+}
+
+.odd-id {
+  float: left; 
+}
+

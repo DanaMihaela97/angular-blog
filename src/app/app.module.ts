@@ -11,6 +11,7 @@ import { EditComponent } from './edit/edit.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { DetailsComponent } from './details/details.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DetailsComponent } from './details/details.component';
     EditComponent,
     HomeComponent,
     HeaderComponent,
-    DetailsComponent
+    DetailsComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

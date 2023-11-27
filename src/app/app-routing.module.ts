@@ -14,17 +14,18 @@ const routes: Routes = [{
   path:"articles",
   component:ArticleListComponent
 },
-{
-  path:"edit",
-  component:EditComponent
-},
+
 {
   path:"header",
   component:HeaderComponent
 },
 {
-  path:"details",
+  path:"details/:id",
   component:DetailsComponent
+},
+{
+  path:"edit/:id",
+  component:EditComponent
 }
 ];
 

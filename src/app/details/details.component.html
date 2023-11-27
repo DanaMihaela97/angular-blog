@@ -1,46 +1,21 @@
-<div>
-    <button type="button" class ="btn btn-danger butonel"(click)="goBack()">Inapoi</button>
-</div>
-<div class="h2">
-    <h2>Un start sănătos în viață </h2>
-</div>
-<div class="h3">
-    <h3>Ca orice animal de companie aflat în etapa de juniorat, acel pisoi mic pe care l-ai adus acasă și-a început
-        viața ca
-        o ființă destul de fragilă. Primul an din viața unui pisoi este perioada sa cea mai delicată, dar această etapă
-        nu
-        durează mult. Pisoiul tău va crește rapid și va depinde de tine pentru a-i oferi tot ceea ce are nevoie pentru a
-        se
-        dezvolta sănătos, de-a lungul călătoriei de la stadiul de pisoi la cel de pisică adultă.</h3>
-</div>
-<h4>1. ABC-ul dezvoltării pisoiului</h4>
-<div class="detail1">
-    <p>În primul an de viață al pisoiului, vor exista mai multe praguri de creștere. Și există atât schimbări fizice,
-        cât și cognitive pe parcursul lor. Odată ce vei putea recunoaște stadiul de creștere în care se află pisoiul
-        tău, vei putea susține cu încredere dezvoltarea sa. </p>
-        <br>
-        <div class="table">
-        <table>
-            <ul>
-                <li> <span style="color:red">Simțul văzului </span><br>
-                    Durează până la 4 săptămâni pentru ca vederea și comportamentul conex al pisoiului (percepția spațială) să fie complet dezvoltate. </li>
-                <li> <span style="color:red">Imunitatea și sistemul natural de apărare</span> <br>
 
-                    În primele 6 luni, sistemul imunitar incomplet dezvoltat al pisoiului trebuie să-l protejeze de milioane de germeni.</li>
-              
-            </ul>
-        </table>
+<button type="button" class="btn btn-danger butonel" (click)="goBack()">Inapoi</button>
+<body>
+  <hr>
+    <div class="container">
+      <div class="content">
+        <img src="{{articleObj.detail_image}}" class="article-image">
+        <div class="text">
+          <h3 class="title">{{articleObj.title}}</h3>
+          <div class="detail">
+            <p class="description"><b>{{articleObj.description}}</b></p> 
+          </div>
+          <div class="detail">
+            <p class="description">{{articleObj.text}}</p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-<h4>2. Cum te pregătești să îl primești acasă</h4>
-<div class="detail">
-
-    <p>Să aduci acasă un pisoi este emoționant. Dar fără o pregătire în avans, primele zile în care parcă navighezi prin
-        necunoscut, pot părea puțin haotice. Vestea bună: nu trebuie să fie așa!Noul tău pisoi are mult de crescut, de
-        dormit și de evoluat. Pregătirile necesare pentru întâmpinarea sa în noul cămin includ și nevoia de a cunoaște
-        lucrurile esențiale de care ai nevoie pentru a îngriji un pisoi și a te asigura că va deveni un adult sănătos.
-        Am selectat toate informațiile necesare pentru ca tu să-ți crești pisoiul în așa fel încât să devină companionul
-        mult visat, care toarce mulțumit.</p>
-    <img src="https://i.pinimg.com/474x/a4/bf/f7/a4bff70dc64a50993af5267826616fdb.jpg">
-
-</div>
+    <button type="button" class="btn btn-outline-danger" [routerLink]="['/edit', articleObj.id.toString()]">Editare articol</button>
+  </body>
+  

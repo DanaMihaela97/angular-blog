@@ -19,16 +19,19 @@ export class CreateArticleComponent {
     this.formValue = this.formBuilder.group({
       title: [''],
       description: [''],
-      author: [''],
-      image:['']
+      home_image:[''],
+      detail_image:[''],
+      text:['']
     });
   }
 
   createBl() {
     this.articleObj.title = this.formValue.value.title;
     this.articleObj.description = this.formValue.value.description;
-    this.articleObj.author = this.formValue.value.author;
-    this.articleObj.image=this.formValue.value.image;
+    this.articleObj.home_image=this.formValue.value.home_image;
+    this.articleObj.detail_image=this.formValue.value.detail_image;
+    this.articleObj.text=this.formValue.value.text;
+
 
     this.api.createArticle(this.articleObj).subscribe(
       (res) => {
@@ -42,5 +45,6 @@ export class CreateArticleComponent {
       }
     );
   }
+  
 
 }

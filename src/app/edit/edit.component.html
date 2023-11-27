@@ -1,1 +1,19 @@
-<p>edit works!</p>
+<div class="form">
+<form [formGroup]="formEdit">
+    <label for="title">Titlu: </label> <br>
+    <input type="text" id="title" formControlName="title" required> <br>
+
+    <label for="description">Conținut: </label> <br>
+    <textarea id="content" formControlName="description" maxlength="5000" required></textarea>
+    <br>
+    <label for="home_image">URL imagine: </label> <br>
+    <input class="form-control" type="text" formControlName="home_image" required>
+    <br>
+    <label for="detail_image">URL imagine detalii: </label> <br>
+    <input class="form-control" type="text" formControlName="detail_image" required>
+
+    <label for="text">Detalii despre articol </label> <br>
+    <textarea id="content" formControlName="text" maxlength="5000" required></textarea>
+</form>
+<button type="button" class="btn btn-primary butonas" (click)="update()">Salveaza</button>
+<button type="button" class="btn btn-success butonas" (click)="goBack()">Inapoi</button></div>

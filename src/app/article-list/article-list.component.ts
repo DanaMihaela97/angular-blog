@@ -37,12 +37,16 @@ export class ArticleListComponent implements OnInit {
   formatDateTime(dateString: string): string {
     const parsedDate = parseISO(dateString);
     const formattedDate = format(parsedDate, "dd MMM yyyy HH:mm:ss", { locale: ro });
-
     return formattedDate;
 }
 loadProductPage(article_id: string) {
-  this.router.navigate(['articles', article_id])
+  this.router.navigate(['/details', article_id])
   console.log("Am apasat pe ", article_id)
 }
+getPositionClass(id: string): string {
+  const numericId = parseInt(id, 10); 
+  return numericId % 2 === 0 ? 'even-id' : 'odd-id';
+}
+
 
 }
