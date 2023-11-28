@@ -8,10 +8,10 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule } from '@angular/common/http';
 import { EditComponent } from './edit/edit.component';
-import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { DetailsComponent } from './details/details.component';
 import { NavComponent } from './nav/nav.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +19,10 @@ import { NavComponent } from './nav/nav.component';
     CreateArticleComponent,
     ArticleListComponent,
     EditComponent,
-    HomeComponent,
     HeaderComponent,
     DetailsComponent,
-    NavComponent
+    NavComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

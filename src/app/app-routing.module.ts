@@ -5,6 +5,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { EditComponent } from './edit/edit.component';
 import { HeaderComponent } from './header/header.component';
 import { DetailsComponent } from './details/details.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [{
   path:"create",
@@ -26,7 +27,12 @@ const routes: Routes = [{
 {
   path:"edit/:id",
   component:EditComponent
+},
+{
+  path:"",
+  component:LoginComponent
 }
+
 ];
 
 @NgModule({
