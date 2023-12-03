@@ -32,15 +32,15 @@ export class CreateArticleComponent {
     this.articleObj.detail_image=this.formValue.value.detail_image;
     this.articleObj.text=this.formValue.value.text;
 
-
-    this.api.createArticle(this.articleObj).subscribe(
+    let jwt = window.localStorage.getItem("jwt");
+    this.api.createArticle(this.articleObj, String(jwt)).subscribe(
       (res) => {
-        console.log('Blog created successfully:', res);
+        console.log('Articol creat cu succes:', res);
         alert('Articol creat cu succes!');
         this.formValue.reset();
       },
       (err) => {
-        console.error('Error creating blog:', err);
+        console.error('Eroare la crearea articolului:', err);
         alert('Eroare la crearea articolului!');
       }
     );

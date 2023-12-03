@@ -8,10 +8,10 @@
         <img src="{{article.home_image}}" class="article-image">
       </div>
       <div class="button-container">
-        <button class="btn btn-primary" style="margin-right:1%"[routerLink]="['/details', article.id.toString()]">Citeste mai mult</button>
-        <button class="btn btn-danger" (click)="deleteArticle(article.id)">Ștergere articol</button>
+        <button class="btn btn-primary" style="margin-right:1%" (click)="checkAuthentication()" [routerLink]="['/details', article.id.toString()]">Citește mai mult</button> </div>
+        <div *ngIf="user.role == 'ROLE_ADMIN'" class="button-container">
+        <button class="btn btn-danger" (click)="deleteArticle(article.id)">Ștergere articol</button> </div>
         <hr>
       </div>
     </div>
-  </div>
 </body>

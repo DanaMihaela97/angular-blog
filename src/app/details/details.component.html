@@ -16,6 +16,7 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-outline-danger" [routerLink]="['/edit', articleObj.id.toString()]">Editare articol</button>
+    <div *ngIf="user.role == 'ROLE_ADMIN'">
+    <button type="button" class="btn btn-outline-danger" [routerLink]="['/edit', articleObj.id.toString()]">Editare articol</button></div>
   </body>
   

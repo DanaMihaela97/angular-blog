@@ -1,21 +1,24 @@
-<h1> Creeaza un articol </h1>
+<h1> Creare articol </h1>
+<div class="container">
+
 <div class="form">
 <form [formGroup]="formValue">
     <label for="title">Titlu: </label> <br>
-    <input type="text" id="title" formControlName="title" required> <br>
+    <input class="lbl" type="text" id="title" formControlName="title" required> <br>
     
     <label for="description">Conținut: </label> <br>
     <textarea id="content" formControlName="description" maxlength="5000" required></textarea>
     <br> 
     <label for="home_image">URL imagine: </label> <br>
-    <input class="form-control" type="text" formControlName="home_image" required>
+    <input class="form-control img" type="text" formControlName="home_image" required>
     <br>
     <label for="detail_image">URL imagine detalii: </label> <br>
-    <input class="form-control" type="text" formControlName="etail_image" required>
+    <input class="form-control img" type="text" formControlName="detail_image" required>
     
     <label for="text">Detalii despre articol </label> <br>
     <textarea id="content" formControlName="text" maxlength="5000" required></textarea>
    
 </form>
-<button type="button" class="btn btn-primary butonas" (click)="createBl()">Publica articolul</button>
+<button type="button" class="btn btn-primary butonas" (click)="createBl()">Publică articolul</button>
 </div>
+<div>

@@ -1,7 +1,9 @@
+<h1>Editare articol</h1>
+<div class="container">
 <div class="form">
 <form [formGroup]="formEdit">
     <label for="title">Titlu: </label> <br>
-    <input type="text" id="title" formControlName="title" required> <br>
+    <input class="lbl" type="text" id="title" formControlName="title" required> <br>
 
     <label for="description">Conținut: </label> <br>
     <textarea id="content" formControlName="description" maxlength="5000" required></textarea>
@@ -15,5 +17,6 @@
     <label for="text">Detalii despre articol </label> <br>
     <textarea id="content" formControlName="text" maxlength="5000" required></textarea>
 </form>
-<button type="button" class="btn btn-primary butonas" (click)="update()">Salveaza</button>
+<button type="button" class="btn btn-primary butonas" style = "margin-right:10px" (click)="update()">Salvează</button>
 <button type="button" class="btn btn-success butonas" (click)="goBack()">Inapoi</button></div>
+</div>

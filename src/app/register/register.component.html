@@ -1,21 +1,23 @@
 <div class="container">
     <div class="row justify-content-center mt-5">
       <div class="col-md-6">
-        <h2>Autentificare</h2>
-        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <h2>Creare cont</h2>
+        <form [formGroup]="formValue">
           <div class="form-group">
             <label for="username">Nume</label>
             <input type="text" class="form-control" id="username" formControlName="username" placeholder="Nume">
           </div>
           <div class="form-group">
-            <label for="password">Parolă</label>
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="password">Parola</label>
             <input type="password" class="form-control" id="password" formControlName="password" placeholder="Parolă">
           </div>
-          <button type="submit"  class="btn btn-primary" style="margin-top: 6px;">Login</button>
+        
+          <button type="submit" (click)=createUserDetails() class="btn btn-primary" style="margin-top: 6px;">Creare cont</button>
         </form>
-        <br>
-        <span style="margin-right:5px">Nu ai cont?</span>
-        <a href="/register">Creează cont</a>
       </div>
     </div>
   </div>

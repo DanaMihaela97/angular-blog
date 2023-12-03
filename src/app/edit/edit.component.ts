@@ -1,7 +1,7 @@
 // edit.component.ts
 
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Article } from '../create-article/article';
@@ -19,7 +19,8 @@ export class EditComponent implements OnInit {
 
   @Input() article: Article = new Article();
 
-  constructor(private location: Location, private apiService: ApiService, private formBuilder: FormBuilder, private route: ActivatedRoute) {}
+  constructor(private location: Location, private apiService: ApiService, private formBuilder: FormBuilder, private route: ActivatedRoute,
+    private router:Router) {}
 
   ngOnInit(): void {
     this.formEdit = this.formBuilder.group({
@@ -36,13 +37,14 @@ export class EditComponent implements OnInit {
   loadArticleData() {
     this.article_id = this.route.snapshot.paramMap.get('id');
 
-    this.apiService.getArticleDetails(this.article_id).subscribe(
+    let jwt = window.localStorage.getItem("jwt");
+    this.apiService.getArticleDetails(this.article_id, String(jwt)).subscribe(
       (details) => {
         this.articleObj = details;
         this.editDetails(); 
       },
       (error) => {
-        console.error("error loading article details: ", error);
+        console.error("Nu s-au putut încărca detaliile : ", error);
       }
     );
   }
@@ -56,10 +58,12 @@ export class EditComponent implements OnInit {
       this.articleObj.detail_image = this.formEdit.value.detail_image;
 
      
-      this.apiService.updateArticle(this.articleObj, this.articleObj.id).subscribe(
+      let jwt = window.localStorage.getItem("jwt");
+      this.apiService.updateArticle(this.articleObj, this.articleObj.id, String(jwt)).subscribe(
         (data) => {
           alert("Articolul a fost actualizat cu succes!")
           console.log('Articolul a fost actualizat cu succes!', data);
+          this.router.navigate(['/blogs']);
         },
         (error) => {
           console.error('Eroare la actualizarea articolului!', error);

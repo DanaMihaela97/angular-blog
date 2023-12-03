@@ -12,6 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { DetailsComponent } from './details/details.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { LoginComponent } from './login/login.component';
     DetailsComponent,
     NavComponent,
     LoginComponent,
+    RegisterComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,10 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

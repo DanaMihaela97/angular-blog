@@ -1,9 +1,20 @@
 <body>
-<nav class="navbar">
-    <ul>
-        <li><a routerLink="/create"><b>Adauga articol</b></a></li>
-        <li><a routerLink="/articles"><b>Toate articolele</b></a></li>
-        <li><a routerLink="/login"><b>Autentificare</b></a></li>
-    </ul>
-</nav>
-</body>
+    <nav class="navbar">
+      <ul>
+        <ng-container *ngIf="user.role == 'ROLE_ADMIN'">
+          <li><a routerLink="/create"><b>Adăugare articol</b></a></li>
+        </ng-container>
+  
+        <li><a  [routerLink]="['/blogs']"><b>Toate articolele</b></a></li>
+  
+        <ng-container *ngIf="authenticated=='false'">
+          <li><a routerLink="/login"><b>Autentificare</b></a></li>
+        </ng-container>
+  
+        <ng-container *ngIf="authenticated=='true'">
+          <li><a routerLink="/logout"><b>Deconectare</b></a></li>
+        </ng-container>
+      </ul>
+    </nav>
+  </body>
+  

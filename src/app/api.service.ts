@@ -1,42 +1,104 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map, throwError } from 'rxjs';
 import { Article } from './create-article/article';
+import { UserModel } from './register/user.model';
+import { userRequest } from './userRequest';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  isLogged: boolean = false;
+  user!: UserModel;
+  private apiUrl = 'http://localhost:8080/api/v1/blog/';
 
-  private url:string='http://localhost:8080/api/v1/blog'
+  constructor(private http: HttpClient) { }
 
-  constructor(private http:HttpClient){}
 
-  getArticles(): Observable<any> {
-    return this.http.get<any>(`${this.url}/blogs`, { withCredentials: false });
+  getArticles(jwt: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      
+    });
+    return this.http.get<[Article]>("http://localhost:8080/api/v1/blog/blogs", { headers })
+
   }
-
-  getArticleById(id: any) {
-    return this.http.get<any>("http://localhost:8080/api/v1/blog/blogs/" + id)
-  }
-
-  public createArticle(data: Article) {
-    console.log(data);
-    return this.http.post<Article>("http://localhost:8080/api/v1/blog/blogs/create", data, { withCredentials: true });
-  }
-  
-
- deleteArticle(id: any) {
-  return this.http.delete<any>("http://localhost:8080/api/v1/blog/blogs/delete/" + id);
-}
-
-  updateArticle(data :any, article_id: any){
-    console.log(data)
-    return this.http.put<any>("http://localhost:8080/api/v1/blog/blogs/edit/" + article_id, data)
-  }
-  getArticleDetails(article_id: any) {
-    return this.http.get<Article>("http://localhost:8080/api/v1/blog/blogs/" + article_id);
+  getArticleById(id: any, jwt: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${jwt}`
+    });
+    return this.http.get<Article>("http://localhost:8080/api/v1/blog/blogs/" + id, { headers })
   }
   
+  createArticle(data: Article, jwt: string): Observable<Article> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${jwt}`,
+    });
+    return this.http.post<Article>(this.apiUrl + 'blogs', data, { headers });
+  }
+ 
+  deleteArticle(id: any, jwt: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${jwt}`
+    });
+    return this.http.delete<any>("http://localhost:8080/api/v1/blog/blogs/" + id, { headers })
+  }
+  updateArticle(data: any, article_id: any, jwt: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${jwt}`
+    });
+    return this.http.put<Article>("http://localhost:8080/api/v1/blog/blogs/" + article_id, data, { headers })
+  }
+  getArticleDetails(article_id: any, jwt: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${jwt}`
+    });
+    return this.http.get<Article>("http://localhost:8080/api/v1/blog/blogs/" + article_id, { headers });
+  }
+
+  //user
+
+
+  // getUser(email: string): Observable<any> {
+  //   const token = localStorage.getItem('jwt');
+
+  //   if (token) {
+  //     const headers = new HttpHeaders({
+  //       'Authorization': 'Bearer ' + String(token),
+  //       'Content-Type': 'application/json'
+  //     });
+
+  //     return this.http.get<any>("http://localhost:8080/api/v1/blog/users/" + email, { headers }).pipe(
+  //       catchError(error => {
+  //         console.error('Error in getUser request:', error);
+  //         return new Observable(observer => observer.error(error));
+  //       })
+  //     );
+  //   } else {
+  //     console.error('Token is missing');
+  //     return new Observable(observer => observer.error('Token is missing'));
+  //   }
+  // }
+
+  public createUser(user: UserModel) {
+    return this.http.post<any>("http://localhost:8080/api/v1/auth/register", user)
+  }
+
+  public signIn(user: userRequest) {
+    return this.http.post<any>("http://localhost:8080/api/v1/auth/authenticate", user)
+  }
+  public setUser(user: UserModel) {
+    this.user = user
+  }
+  public getUser(username: String) {
+    return this.http.get<any>("http://localhost:8080/api/v1/blog/users/" + username);
+  }
 
 }

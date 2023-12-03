@@ -6,13 +6,15 @@ import { EditComponent } from './edit/edit.component';
 import { HeaderComponent } from './header/header.component';
 import { DetailsComponent } from './details/details.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [{
   path:"create",
   component:CreateArticleComponent
 },
 {
-  path:"articles",
+  path:"blogs",
   component:ArticleListComponent
 },
 
@@ -31,6 +33,18 @@ const routes: Routes = [{
 {
   path:"",
   component:LoginComponent
+},
+{
+  path:"login",
+  component:LoginComponent
+},
+{
+  path: 'logout',
+  component: LogoutComponent
+},
+{
+  path:"register",
+  component:RegisterComponent
 }
 
 ];

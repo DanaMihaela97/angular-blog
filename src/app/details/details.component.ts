@@ -3,7 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Article } from '../create-article/article';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { UserModel } from '../register/user.model';
 
 @Component({
   selector: 'app-details',
@@ -14,29 +15,43 @@ export class DetailsComponent implements OnInit {
   articleObj: Article = new Article();
   article_id:any;
   formEdit!: FormGroup;
+  loc!: String;
+  user!:UserModel
+  authenticated:string=""
+  
   @Input() article: Article = new Article();
   
-  constructor(private location:Location, private router:Router,private formBuilder: FormBuilder, private apiService:ApiService, private route: ActivatedRoute){}
-  ngOnInit(): void 
-  {
-
+  constructor(private location:Location, private router:Router, private apiService:ApiService, private route: ActivatedRoute){}
+  ngOnInit(): void {
     this.loadArticleData();
-  
+    this.initializeUser();
   }
+  
+  initializeUser() {
+    if (window.localStorage.getItem("authenticated") == null) {
+      window.localStorage.setItem("authenticated", "false");
+    }
+  
+    this.user = new UserModel();
+    this.user.email = String(window.localStorage.getItem("email"));
+    this.user.role = String(window.localStorage.getItem("role"));
+    this.authenticated = String(window.localStorage.getItem("authenticated"));
+  }
+  
   loadArticleData() {
     this.article_id = this.route.snapshot.paramMap.get('id');
 
-    this.apiService.getArticleDetails(this.article_id).subscribe(
+    let jwt = window.localStorage.getItem("jwt");
+    this.apiService.getArticleDetails(this.article_id, String(jwt)).subscribe(
       (details) => {
         this.articleObj = details;
       },
       (error) => {
-        console.error("error loading article details: ", error);
+        console.error("error: ", error);
       }
     );
   
   }
-
   
   goBack(): void {
     this.location.back();
