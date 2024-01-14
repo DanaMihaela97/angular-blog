@@ -14,10 +14,13 @@ const routes: Routes = [{
   component:CreateArticleComponent
 },
 {
+  path:"",
+  component:ArticleListComponent
+},
+{
   path:"blogs",
   component:ArticleListComponent
 },
-
 {
   path:"header",
   component:HeaderComponent
@@ -30,23 +33,19 @@ const routes: Routes = [{
   path:"edit/:id",
   component:EditComponent
 },
-{
-  path:"",
-  component:LoginComponent
-},
+
 {
   path:"login",
   component:LoginComponent
 },
 {
-  path: 'logout',
+  path:"logout",
   component: LogoutComponent
 },
 {
   path:"register",
   component:RegisterComponent
-}
-
+},
 ];
 
 @NgModule({

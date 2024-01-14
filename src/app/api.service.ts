@@ -16,7 +16,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-
+  // articole
   getArticles(jwt: string) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -64,29 +64,6 @@ export class ApiService {
   }
 
   //user
-
-
-  // getUser(email: string): Observable<any> {
-  //   const token = localStorage.getItem('jwt');
-
-  //   if (token) {
-  //     const headers = new HttpHeaders({
-  //       'Authorization': 'Bearer ' + String(token),
-  //       'Content-Type': 'application/json'
-  //     });
-
-  //     return this.http.get<any>("http://localhost:8080/api/v1/blog/users/" + email, { headers }).pipe(
-  //       catchError(error => {
-  //         console.error('Error in getUser request:', error);
-  //         return new Observable(observer => observer.error(error));
-  //       })
-  //     );
-  //   } else {
-  //     console.error('Token is missing');
-  //     return new Observable(observer => observer.error('Token is missing'));
-  //   }
-  // }
-
   public createUser(user: UserModel) {
     return this.http.post<any>("http://localhost:8080/api/v1/auth/register", user)
   }

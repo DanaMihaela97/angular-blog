@@ -36,8 +36,6 @@ import { LogoutComponent } from './logout/logout.component';
     FormsModule
   ],
   providers: [
-    
-    
   ],
   bootstrap: [AppComponent]
 })

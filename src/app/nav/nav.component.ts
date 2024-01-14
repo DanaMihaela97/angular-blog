@@ -23,6 +23,4 @@ ngOnInit(){
   this.authenticated = String(window.localStorage.getItem("authenticated"))
 
 }
-
-
 }

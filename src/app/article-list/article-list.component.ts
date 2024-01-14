@@ -58,7 +58,7 @@ getPositionClass(id: string): string {
 }
 checkAuthentication() {
   if (this.authenticated === 'false') {
-    alert('Trebuie să fii autentificat pentru a avae acces la mai multe detalii!');
+    alert('Trebuie să fii autentificat pentru a avea acces la mai multe detalii!');
     this.router.navigate(['/login']);
    
   }

@@ -1,21 +1,20 @@
 <div class="container">
-    <div class="row justify-content-center mt-5">
+  <div class="row justify-content-center mt-5">
       <div class="col-md-6">
-        <h2>Autentificare</h2>
-        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
-          <div class="form-group">
-            <label for="username">Nume</label>
-            <input type="text" class="form-control" id="username" formControlName="username" placeholder="Nume">
-          </div>
-          <div class="form-group">
-            <label for="password">Parolă</label>
-            <input type="password" class="form-control" id="password" formControlName="password" placeholder="Parolă">
-          </div>
-          <button type="submit"  class="btn btn-primary" style="margin-top: 6px;">Login</button>
-        </form>
-        <br>
-        <span style="margin-right:5px">Nu ai cont?</span>
-        <a href="/register">Creează cont</a>
+          <form [formGroup]="signUpForm" (ngSubmit)="signUp()" class="text-center"> 
+              <h2>Autentificare</h2>
+              <div class="form-group">
+                  <input type="text" class="form-control lbl" id="username" formControlName="username" placeholder="Nume">
+              </div>
+              <div class="form-group">
+                  <input type="password" class="form-control lbl" id="password" formControlName="password" placeholder="Parolă">
+              </div>
+              <button type="submit" class="btn btn-primary button" >Login</button> <br>
+              <div class="d-flex justify-content-center">
+                  <span style="margin-right: 5px; margin-top:10px;">Nu ai cont?</span>
+                  <a href="/register" style="margin-top:10px">Creează cont</a>
+              </div>
+          </form>
       </div>
-    </div>
   </div>
+</div>

@@ -60,7 +60,5 @@ export class LoginComponent implements OnInit{
         this.signUpForm.get("password")?.reset();
       }
     })
-   
-  
 }
 }

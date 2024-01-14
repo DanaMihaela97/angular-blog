@@ -8,14 +8,15 @@ textarea {
   h1 {
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: brown;
+    color:rgb(148, 112, 148);
     position: relative; 
     z-index: 100; 
+    margin-top:10px;
 }
   
 
   .form {
-    background-color: #f3dada;
+    background-color: #fae6e6;
     text-align: center;
     font-weight: bold;
     padding: 20px;
@@ -42,5 +43,3 @@ textarea {
     box-sizing: border-box;
   }
 
-  
-  

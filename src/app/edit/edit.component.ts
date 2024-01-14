@@ -44,7 +44,7 @@ export class EditComponent implements OnInit {
         this.editDetails(); 
       },
       (error) => {
-        console.error("Nu s-au putut încărca detaliile : ", error);
+        console.error("Nu s-au putut încărca detaliile: ", error);
       }
     );
   }
