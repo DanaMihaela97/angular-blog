@@ -3,19 +3,22 @@
 
 <div class="form">
 <form [formGroup]="formValue">
-    <label for="title">Titlu: </label> <br>
-    <input class="lbl" type="text" id="title" formControlName="title" required> <br>
+    <label for="title">Inserare titlu: </label> <br>
+    <input class="lbl" type="text" id="title" formControlName="title" required> 
+    <br>  <br>
     
-    <label for="description">Conținut: </label> <br>
+    <label for="description">Inserare conținut articolului: </label> 
     <textarea id="content" formControlName="description" maxlength="5000" required></textarea>
-    <br> 
-    <label for="home_image">URL imagine: </label> <br>
+    <br>   <br>
+
+    <label for="home_image">Inserare URL imagine: </label> 
     <input class="form-control img" type="text" formControlName="home_image" required>
-    <br>
-    <label for="detail_image">URL imagine detalii: </label> <br>
+    <br> 
+
+    <label for="detail_image">Inserare URL imagine detalii: </label> 
     <input class="form-control img" type="text" formControlName="detail_image" required>
-    
-    <label for="text">Detalii despre articol </label> <br>
+     <br> 
+    <label for="text">Inserare detalii despre articol </label> <br>
     <textarea id="content" formControlName="text" maxlength="5000" required></textarea>
    
 </form>
