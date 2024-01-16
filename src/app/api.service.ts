@@ -38,6 +38,7 @@ export class ApiService {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${jwt}`,
     });
+    
     return this.http.post<Article>(this.apiUrl + 'blogs', data, { headers });
   }
  
