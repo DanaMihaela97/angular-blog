@@ -1,6 +1,18 @@
 # AngularBlog
 
+This is a full-stack blog application dedicated to cats. Users can view a list of cat-related articles with brief descriptions. To read full articles, users must create an account and log in.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+
+
+# Technologies Used
+
+  Frontend: Angular
+  Backend: Spring Boot
+  Database: MySQL (or other relational databases)
+  Authentication: JWT (JSON Web Token)
+  API Communication: RESTful APIs
+  Build Tools: Maven (for Spring Boot), npm (for Angular)
 
 ## Development server
 
