@@ -7,12 +7,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Technologies Used
 
-  Frontend: Angular
-  Backend: Spring Boot
-  Database: MySQL (or other relational databases)
-  Authentication: JWT (JSON Web Token)
-  API Communication: RESTful APIs
-  Build Tools: Maven (for Spring Boot), npm (for Angular)
+  * Frontend: Angular
+  * Backend: Spring Boot
+  * Database: MySQL (or other relational databases)
+  * Authentication: JWT (JSON Web Token)
+  * API Communication: RESTful APIs
+  * Build Tools: Maven (for Spring Boot), npm (for Angular)
 
 ## Development server
 
